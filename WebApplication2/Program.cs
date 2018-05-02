@@ -19,6 +19,8 @@ namespace WebApplication2
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")
+                .CaptureStartupErrors(true)
                 .UseStartup<Startup>();
     }
 }
